@@ -1,0 +1,12 @@
+d1 $ s "[bleep [bleep bleep]]*2" # n "[0 1 2 3]"
+
+d2 $ s "[[bottle bottle] bottle bottle]*2" # n "[0 2 3 1 5 4 6 7 8]"
+
+d3 $ s "[supersaw*2]*2" # n "d3 f3 f3 f3"
+
+
+hush
+
+
+
+
