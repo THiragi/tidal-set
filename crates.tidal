@@ -1,3 +1,5 @@
+setcps (130/60/4)
+
 d1
   $ stutWith 2 (0.125*4) (stutWith 4 (0.0625) (|* gain 0.95))
   $ s "~ notes" # n "<1>" 
@@ -6,19 +8,25 @@ d2
   $ s "[proc ~]" # n "<1 1 0 0>" # gain "0.8"
 
 d3 
-  $ s "[glitch2*2 ~ <print*2 print> glitch*2 glitch]" # n (irand 16) # speed "<1 1.5 0.5>"
+  $ s "[glitch2*2 ~ <print*2 print print*3> <glitch*2 glitch*2> glitch]*2" # n (irand 16) # speed "<2 1.5 0.75 1 -1>"
 
 d4
   $ s "[supersaw*8 ~]" # n "<-26 -26>" 
 
 d5
-  $ "bd*4" # n "21"
+  $ "[sd*2]*2" # n "21"
 
+-- tone
 d1 silence
 
+-- sample1
 d2 silence
 
+-- sample2
 d3 silence
 
+-- bass
 d4 silence
 
+-- drum
+d5 silence
