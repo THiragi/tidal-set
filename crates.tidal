@@ -1,4 +1,4 @@
-setcps (112/60/4)
+setcps (115/60/4)
 
 d1
   $ stutWith 2 (0.125*4) (stutWith 4 (0.0625) (|* gain 0.95))
@@ -14,7 +14,7 @@ d4
   $ s "[supersaw*8 ~]" # n "<-26 -26 -23 -21>" 
 
 d5
-  $ s "<hc*3>" # n "0"
+  $ s "<hc*4>" # n "0"
 
 d6
   $ s "[[bd ~][~ bd][sd bd][~ bd][bd ~][~ bd][sd bd][~ sd]]" # n "21"
