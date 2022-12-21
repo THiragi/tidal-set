@@ -1,25 +1,26 @@
-setcps (114/60/4)
+setcps (110/60/4)
 
-d1
-  $ stutWith 2 (0.125*4) (stutWith 4 (0.0625) (|* gain 0.95))
-  $ s "~ notes" # n "<1>" # speed "<1>" 
+d1 $ every 3 (0.25 ~>) $ sound "bd*2 cp*2 hh sn"
 
 d2 
   $ s "[proc ~]" # n "<1 1 0 0>" # gain "0.8"
 
 d3 
-  $ s "[glitch2*2 ~ <print*2 print print*3> <glitch*2 glitch> glitch]*2" # n (irand 16) # speed "<2 1.5 0.75 1 -1>"
+  $ s "[glitch2*2 ~ <print*2 print print(3,6,2)> <glitch(5,9,3) glitch> glitch]*2" # n (irand 16) # speed "<2 1.5 0.75 1 -1>"
 
 d4
-  $ s "[supersaw ~  ~ supersaw ~  ~ supersaw ~ ]" # n "<-23 -21 -26 -26 -16 -17 -14 -14>" 
+  $ jux (iter 16 ) $ s "superrhodes(11, 16)" # n "[<-26 -26 -28 -29> <-26 -26 -28 -28>]" 
 
 d5
-  $ s "[hc*4 [~ hc*2] ~ [~ hc ~ hc] ]" # n "0"
+  $ s "[808hc*4 [~ 808hc*2] ~ [~ 808hc ~ 808hc] ]" # n "1" # speed "<0.5>" # pan (rand) 
 
 d6
-  $ s "[[bd ~][~ ~][sd bd][~ ~][bd ~][~ bd][sd bd][~ sd]]" # n "18"
+  $ s "sd(3, 8, 6)" # n "18"
 
 d7 $ s "~ industrial" # speed "<1>"
+
+d8
+  $ s "bd(5, 8, 7)" # n "21" 
 
 -- tone
 d1 silence
